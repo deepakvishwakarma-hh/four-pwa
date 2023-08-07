@@ -3,29 +3,33 @@ import Editor from './editor';
 import './database';
 import '../css/style.css';
 
+// Clear the content of the main element
 const main = document.querySelector('#main');
 main.innerHTML = '';
 
-const loadSpinner = () => {
+// Function to display a loading spinner
+const displaySpinner = () => {
   const spinner = document.createElement('div');
   spinner.classList.add('spinner');
   spinner.innerHTML = `
-  <div class="loading-container">
-  <div class="loading-spinner" />
-  </div>
+    <div class="loading-container">
+      <div class="loading-spinner"></div>
+    </div>
   `;
   main.appendChild(spinner);
 };
 
+// Instantiate the editor
 const editor = new Editor();
 
+// If the editor is not instantiated properly, display a loading spinner
 if (typeof editor === 'undefined') {
-  loadSpinner();
+  displaySpinner();
 }
 
 // Check if service workers are supported
 if ('serviceWorker' in navigator) {
-  // register workbox service worker
+  // Register the Workbox service worker
   const workboxSW = new Workbox('/src-sw.js');
   workboxSW.register();
 } else {

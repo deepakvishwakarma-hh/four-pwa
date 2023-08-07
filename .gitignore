@@ -1,3 +1,3 @@
-/Main/client/node_modules
-/Main/server/node_modules
-/Main/client/dist
+/client/node_modules
+/server/node_modules
+/client/dist
