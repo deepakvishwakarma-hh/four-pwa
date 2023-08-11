@@ -18,7 +18,7 @@ const initializeDatabase = async () => {
 };
 
 // Method to add content to the IndexedDB database
-export const addToDatabase = async (content) => {
+export const putDb = async (content) => {
   console.log('Adding to the database');
   const databaseName = 'jate';
   const databaseVersion = 1;
@@ -32,7 +32,7 @@ export const addToDatabase = async (content) => {
 };
 
 // Method to retrieve content from the IndexedDB database
-export const retrieveFromDatabase = async () => {
+export const getDb = async () => {
   console.log('Retrieving from the database');
   const databaseName = 'jate';
   const databaseVersion = 1;
